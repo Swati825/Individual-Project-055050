@@ -15,7 +15,7 @@ st.sidebar.title("Filters")
 
 # Category Filter
 categories = df_sample['Category'].unique()
-selected_categories = st.sidebar.multiselect("Select Categories", options=categories, default=categories, color='blue')
+selected_categories = st.sidebar.multiselect("Select Categories", options=categories, default=categories)
 
 # Import/Export Filter
 import_export_options = df_sample['Import_Export'].unique()
