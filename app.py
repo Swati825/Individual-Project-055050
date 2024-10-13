@@ -48,7 +48,7 @@ if not filtered_df.empty:
         transaction_counts = filtered_df['Import_Export'].value_counts()
         st.markdown('### Import vs Export Transactions')
         fig, ax = plt.subplots()
-        ax.pie(transaction_counts, labels=transaction_counts.index, autopct='%1.1f%%', colors=['skyblue', 'orange'])
+        ax.pie(transaction_counts, labels=transaction_counts.index, autopct='%1.1f%%', colors=['yellow', 'orange'])
         ax.axis('equal')
         st.pyplot(fig)
 
@@ -56,7 +56,7 @@ if not filtered_df.empty:
         # Box Plot for Export/Import by Year
         st.markdown("### Export/Import Distribution by Year")
         plt.figure(figsize=(10,6))
-        sns.boxplot(x='Year', y='Import_Export', data=filtered_df)
+        sns.boxplot(x='Year', y='Import_Export', data=filtered_df, palette=['#1f77b4', '#ff7f0e'])
         plt.title("Yearly Export/Import Box Plot")
         st.pyplot(plt)
 
@@ -66,7 +66,7 @@ if not filtered_df.empty:
     with col3:
         st.markdown('### Histogram of Transaction Values')
         plt.figure(figsize=(10,6))
-        plt.hist(filtered_df['Value'], bins=20, color='blue', edgecolor='black')
+        plt.hist(filtered_df['Value'], bins=20, color='orange', edgecolor='black')
         plt.title('Distribution of Transaction Values')
         plt.xlabel('Transaction Value')
         plt.ylabel('Frequency')
