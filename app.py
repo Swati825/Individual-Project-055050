@@ -15,7 +15,7 @@ st.sidebar.title("Filters")
 
 # Category Filter
 categories = df_sample['Category'].unique()
-selected_categories = st.sidebar.multiselect("Select Categories", options=categories, default=categories)
+selected_categories = st.sidebar.multiselect("Select Categories", options=categories, default=categories, color='blue')
 
 # Import/Export Filter
 import_export_options = df_sample['Import_Export'].unique()
@@ -66,7 +66,7 @@ if not filtered_df.empty:
     with col3:
         st.markdown('### Histogram of Transaction Values')
         plt.figure(figsize=(10,6))
-        plt.hist(filtered_df['Value'], bins=20, color='brown', edgecolor='black')
+        plt.hist(filtered_df['Value'], bins=20, color='green', edgecolor='black')
         plt.title('Distribution of Transaction Values')
         plt.xlabel('Transaction Value')
         plt.ylabel('Frequency')
