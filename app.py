@@ -66,7 +66,7 @@ if not filtered_df.empty:
     with col3:
         st.markdown('### Histogram of Transaction Values')
         plt.figure(figsize=(10,6))
-        plt.hist(filtered_df['Value'], bins=20, color='yellow', edgecolor='black')
+        plt.hist(filtered_df['Value'], bins=20, color='orange', edgecolor='black')
         plt.title('Distribution of Transaction Values')
         plt.xlabel('Transaction Value')
         plt.ylabel('Frequency')
