@@ -48,7 +48,7 @@ if not filtered_df.empty:
         transaction_counts = filtered_df['Import_Export'].value_counts()
         st.markdown('### Import vs Export Transactions')
         fig, ax = plt.subplots()
-        ax.pie(transaction_counts, labels=transaction_counts.index, autopct='%1.1f%%', colors=['yellow', 'orange'])
+        ax.pie(transaction_counts, labels=transaction_counts.index, autopct='%1.1f%%', colors=['#1f77b4', '#ff7f0e'])
         ax.axis('equal')
         st.pyplot(fig)
 
@@ -66,7 +66,7 @@ if not filtered_df.empty:
     with col3:
         st.markdown('### Histogram of Transaction Values')
         plt.figure(figsize=(10,6))
-        plt.hist(filtered_df['Value'], bins=20, color='green', edgecolor='black')
+        plt.hist(filtered_df['Value'], bins=20, color='yellow', edgecolor='black')
         plt.title('Distribution of Transaction Values')
         plt.xlabel('Transaction Value')
         plt.ylabel('Frequency')
